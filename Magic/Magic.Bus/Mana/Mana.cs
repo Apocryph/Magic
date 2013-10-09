@@ -48,7 +48,7 @@ namespace Magic.Bus.Mana
         {
             for (int i = 0; i < mana.Value; i++)
             {
-                manaBuilder.Append(GetColorShortName(mana.Key));
+                manaBuilder.AppendFormat("{{0}}", GetColorShortName(mana.Key));
             }
         }
 
