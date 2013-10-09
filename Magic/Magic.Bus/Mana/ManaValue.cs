@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Magic.Bus.Misc;
 
 namespace Magic.Bus.Mana
 {
     [Serializable]
-    public class Mana
+    public class ManaValue : ICost
     {
         [NonSerialized]
         private Dictionary<ManaColor, int> _dict;
@@ -110,7 +111,7 @@ namespace Magic.Bus.Mana
         }
         #endregion Accessors
 
-        public Mana()
+        public ManaValue()
         {
             _dict = new Dictionary<ManaColor, int>();
         }
