@@ -39,12 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mana\Mana.cs" />
+    <Compile Include="Abilities\Ability.cs" />
+    <Compile Include="Card\Card.cs" />
+    <Compile Include="Card\CardType.cs" />
+    <Compile Include="Card\CreatureType.cs" />
+    <Compile Include="Card\PlaneswalkerType.cs" />
+    <Compile Include="Mana\ManaValue.cs" />
     <Compile Include="Mana\ManaColor.cs" />
     <Compile Include="Mana\ManaColorAttribute.cs" />
+    <Compile Include="Misc\ICost.cs" />
+    <Compile Include="Misc\PowerToughnessAdjustment.cs" />
+    <Compile Include="Misc\Utils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="CardZones\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

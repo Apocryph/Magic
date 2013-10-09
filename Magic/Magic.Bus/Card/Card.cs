@@ -33,6 +33,26 @@ namespace Magic.Bus.Card
 
         public List<Ability> ActivatedAbilities { get; set; }
 
- 
+        public int BasePower { get; set; }
+
+        public int BaseToughness { get; set; }
+
+        public List<PowerToughnessAdjustment> PowerToughnessAdjustments { get; set; }
+
+        public int Power
+        {
+            get
+            {
+                return BasePower + PowerToughnessAdjustments.Select(pwa => pwa.PowerAdjustment).Sum();
+            }
+        }
+
+        public int Toughness
+        {
+            get
+            {
+                return BaseToughness + PowerToughnessAdjustments.Select(pwa => pwa.ToughnessAdjustment).Sum();
+            }
+        }
     }
 }
