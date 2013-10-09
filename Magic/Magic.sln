@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20827.3
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magic", "Magic\Magic.csproj", "{0CC09314-20B7-48A5-B39E-A6C39E32C2E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magic.Bus", "Magic.Bus\Magic.Bus.csproj", "{6664F0A1-A51A-42C7-81C1-C19052FAC228}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,10 @@ Global
 		{0CC09314-20B7-48A5-B39E-A6C39E32C2E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CC09314-20B7-48A5-B39E-A6C39E32C2E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CC09314-20B7-48A5-B39E-A6C39E32C2E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6664F0A1-A51A-42C7-81C1-C19052FAC228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6664F0A1-A51A-42C7-81C1-C19052FAC228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6664F0A1-A51A-42C7-81C1-C19052FAC228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6664F0A1-A51A-42C7-81C1-C19052FAC228}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
