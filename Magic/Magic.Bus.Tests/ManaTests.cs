@@ -111,9 +111,7 @@ namespace Magic.Bus.Tests
         [TestMethod]
         public void EnumHelper_GetColorString()
         {
-            string expected = "G";
-            string actual = ManaColor.Green.GetAttributeOfType<ManaColorAttribute>().ColorShortName;
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual("G", ManaColor.Green.GetAttributeOfType<ManaColorAttribute>().ColorShortName);
         }
 
         [TestMethod]

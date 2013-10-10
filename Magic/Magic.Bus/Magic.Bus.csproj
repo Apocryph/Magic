@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abilities\Ability.cs" />
+    <Compile Include="Board\Board.cs" />
+    <Compile Include="Board\BoardZone.cs" />
     <Compile Include="CardZones\CardZone.cs" />
     <Compile Include="Cards\Card.cs" />
     <Compile Include="Cards\CardType.cs" />
