@@ -7,10 +7,12 @@ using Magic.Bus.Abilities;
 using Magic.Bus.Mana;
 using Magic.Bus.Misc;
 
-namespace Magic.Bus.Card
+namespace Magic.Bus.Cards
 {
     public class Card
     {
+        public string Name { get; set; }
+
         public ManaValue ManaCost { get; set; }
 
         public List<ICost> CastingCost { get; set; } 
@@ -53,6 +55,19 @@ namespace Magic.Bus.Card
             {
                 return BaseToughness + PowerToughnessAdjustments.Select(pwa => pwa.ToughnessAdjustment).Sum();
             }
+        }
+
+        public bool IsTapped { get; set; }
+
+        public Card()
+        {
+            CastingCost = new List<ICost>();
+            CardTypes = new List<CardType>();
+            CreatureTypes = new List<CreatureType>();
+            PlaneswalkerTypes = new List<PlaneswalkerType>();
+            PassiveAbilities = new List<Ability>();
+            ActivatedAbilities = new List<Ability>();
+            PowerToughnessAdjustments = new List<PowerToughnessAdjustment>();
         }
     }
 }

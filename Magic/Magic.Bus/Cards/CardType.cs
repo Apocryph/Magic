@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Magic.Bus.Card
+namespace Magic.Bus.Cards
 {
     public enum CardType
     {

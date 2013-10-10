@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Magic.Bus.Misc
 {
+    /// <summary>
+    /// A modifier to a creature's power and toughness.
+    /// </summary>
     public abstract class PowerToughnessAdjustment
     {
         public int PowerAdjustment { get; set; }
@@ -19,6 +22,9 @@ namespace Magic.Bus.Misc
         }
     }
 
+    /// <summary>
+    /// A semi-permenant adjustment to a creature's power and toughness
+    /// </summary>
     public class Counter : PowerToughnessAdjustment
     {
         public Counter(int powerAdjustment, int toughnessAdjustment) : base(powerAdjustment, toughnessAdjustment)
@@ -26,6 +32,9 @@ namespace Magic.Bus.Misc
         }
     }
 
+    /// <summary>
+    /// A temporary adjustment to a creature's power and toughness
+    /// </summary>
     public class TemporaryPowerToughnessAdjustment : PowerToughnessAdjustment
     {
         /// <summary>
