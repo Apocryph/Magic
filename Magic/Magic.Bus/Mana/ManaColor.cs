@@ -9,6 +9,8 @@ namespace Magic.Bus.Mana
     public enum ManaColor
     {
         [ManaColorAttribute("X")]
+        Variable,
+        [ManaColorAttribute("ReplaceMe")]
         Colorless,
         [ManaColorAttribute("G")]
         Green,
@@ -50,5 +52,15 @@ namespace Magic.Bus.Mana
         DoubleColorlessBlack,
         [ManaColorAttribute("2R")]
         DoubleColorlessRed,
+        [ManaColorAttribute("PG")]
+        PhyrexianGreen,
+        [ManaColorAttribute("PW")]
+        PhyrexianWhite,
+        [ManaColorAttribute("PU")]
+        PhyrexianBlue,
+        [ManaColorAttribute("PB")]
+        PhyrexianBlack,
+        [ManaColorAttribute("PR")]
+        PhyrexianRed
     }
 }

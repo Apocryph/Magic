@@ -47,6 +47,7 @@
     <Compile Include="Mana\ManaValue.cs" />
     <Compile Include="Mana\ManaColor.cs" />
     <Compile Include="Mana\ManaColorAttribute.cs" />
+    <Compile Include="Misc\EnumHelper.cs" />
     <Compile Include="Misc\ICost.cs" />
     <Compile Include="Misc\PowerToughnessAdjustment.cs" />
     <Compile Include="Misc\Utils.cs" />

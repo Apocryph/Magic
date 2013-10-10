@@ -20,7 +20,7 @@ namespace Magic.Bus.Mana
             {
                 var doubleCostColors = _dict.Where(IsDoubleCostColor);
                 var singleCostColors = _dict.Except(doubleCostColors);
-                return singleCostColors.Select(mana => mana.Value).Sum() + doubleCostColors.Select(mana => mana.Value * 2).Sum();
+                return singleCostColors.Select(mana => mana.Value).Sum() + doubleCostColors.Select(mana => mana.Value * 2).Sum() - this.Variable;
             }
         }
 
@@ -47,23 +47,28 @@ namespace Magic.Bus.Mana
 
         private void AppendIndividualManaCost(StringBuilder manaBuilder, KeyValuePair<ManaColor, int> mana)
         {
-            for (int i = 0; i < mana.Value; i++)
+            if (mana.Key == ManaColor.Colorless)
             {
-                manaBuilder.AppendFormat("{{0}}", GetColorShortName(mana.Key));
+                manaBuilder.AppendFormat("{{{0}}}", mana.Value.ToString());
+            }
+            else
+            {
+                for (int i = 0; i < mana.Value; i++)
+                {
+                    manaBuilder.AppendFormat("{{{0}}}", GetColorShortName(mana.Key));
+                }
             }
         }
 
         private string GetColorShortName(ManaColor mc)
         {
-            var attrs = mc.GetType().GetCustomAttributes(typeof(ManaColorAttribute), false);
-            if (!attrs.Any())
-                throw new NotImplementedException();
-            return (attrs.First() as ManaColorAttribute).ColorShortName;
+            return mc.GetAttributeOfType<ManaColorAttribute>().ColorShortName;
         }
         #endregion ManaCostString
 
         #region ExplicitAccessors
 
+        public int Variable { get { return this[ManaColor.Variable]; } set { this[ManaColor.Variable] = value; } }
         public int Colorless { get { return this[ManaColor.Colorless]; } set { this[ManaColor.Colorless] = value; } }
         public int Green { get { return this[ManaColor.Green]; } set { this[ManaColor.Green] = value; } }
         public int White { get { return this[ManaColor.White]; } set { this[ManaColor.White] = value; } }
@@ -85,6 +90,11 @@ namespace Magic.Bus.Mana
         public int DoubleColorlessBlue { get { return this[ManaColor.DoubleColorlessBlue]; } set { this[ManaColor.DoubleColorlessBlue] = value; } }
         public int DoubleColorlessBlack { get { return this[ManaColor.DoubleColorlessBlack]; } set { this[ManaColor.DoubleColorlessBlack] = value; } }
         public int DoubleColorlessRed { get { return this[ManaColor.DoubleColorlessRed]; } set { this[ManaColor.DoubleColorlessRed] = value; } }
+        public int PhyrexianGreen { get { return this[ManaColor.PhyrexianGreen]; } set { this[ManaColor.PhyrexianGreen] = value; } }
+        public int PhyrexianWhite { get { return this[ManaColor.PhyrexianWhite]; } set { this[ManaColor.PhyrexianWhite] = value; } }
+        public int PhyrexianBlue { get { return this[ManaColor.PhyrexianBlue]; } set { this[ManaColor.PhyrexianBlue] = value; } }
+        public int PhyrexianBlack { get { return this[ManaColor.PhyrexianBlack]; } set { this[ManaColor.PhyrexianBlack] = value; } }
+        public int PhyrexianRed { get { return this[ManaColor.PhyrexianRed]; } set { this[ManaColor.PhyrexianRed] = value; } }
 
         #endregion ExplicitAccessors
 
